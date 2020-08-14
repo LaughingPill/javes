@@ -1,5 +1,12 @@
 
-from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = tgbot = bot.tgbot = client 
+from userbot import * ;  
+from sys import * ; 
+from telethon import TelegramClient, functions, types ; 
+from telethon.tl.types import InputMessagesFilterDocument ; 
+from pathlib import Path; 
+from userbot.javes_main.commands import * ; 
+import asyncio, os, traceback, sys, traceback, os, importlib, glob ; 
+javes = tgbot = bot.tgbot = client 
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
 
@@ -35,7 +42,7 @@ async def a():
          await tebot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
       except:
          LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
-  test = await client.get_messages(plugin_channel_custom, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
+  test1 = await client.get_messages(plugin_channel_custom, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
   ar = glob.glob("userbot/modules/*.py")
@@ -75,4 +82,7 @@ async def a():
         
 
 javes.loop.run_until_complete(a())
+
+
+
 
