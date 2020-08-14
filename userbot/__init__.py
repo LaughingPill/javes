@@ -4,7 +4,6 @@ import os
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG, WARNING
 from distutils.util import strtobool as sb
-##from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from dotenv import load_dotenv
 from requests import get
@@ -60,11 +59,6 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 CLEAN_WELCOME = config.CLEAN_WELCOME
 BIO_PREFIX = config.BIO_PREFIX
 DEFAULT_BIO = config.DEFAULT_BIO
-LASTFM_API = config.LASTFM_API
-LASTFM_SECRET = config.LASTFM_SECRET
-LASTFM_USERNAME = config.LASTFM_USERNAME
-LASTFM_PASSWORD_PLAIN = config.LASTFM_PASSWORD_PLAIN
-LASTFM_PASS = config.LASTFM_PASS
 G_DRIVE_CLIENT_ID = config.G_DRIVE_CLIENT_ID
 G_DRIVE_CLIENT_SECRET = config.G_DRIVE_CLIENT_SECRET
 G_DRIVE_AUTH_TOKEN_DATA = config.G_DRIVE_AUTH_TOKEN_DATA
@@ -73,10 +67,7 @@ TEMP_DOWNLOAD_DIRECTORY = config.TEMP_DOWNLOAD_DIRECTORY
 
 
 
-##if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
-    ##lastfm = LastFMNetwork(api_key=LASTFM_API,api_secret=LASTFM_SECRET,username=LASTFM_USERNAME,password_hash=LASTFM_PASS)
-##else:
-    ##lastfm = None
+
     
 from userbot import ALIVE_NAME
 from userbot import DEFAULTUSER
@@ -126,5 +117,7 @@ LOAD_PLUG = {}
 ISAFK = None
 AFKREASON = None
 INT_PLUG = ""
+
+
 
 
