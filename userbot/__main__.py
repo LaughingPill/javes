@@ -1,3 +1,4 @@
+
 from userbot import * ;  from sys import * ; from telethon import TelegramClient, functions, types ; from telethon.tl.types import InputMessagesFilterDocument ; from pathlib import Path; from userbot.javes_main.commands import * ; import asyncio, os, traceback, sys, traceback, os, importlib, glob ; javes = tgbot = bot.tgbot = client 
 from telethon.tl.types import InputMessagesFilterDocument
 from importlib import import_module
@@ -7,6 +8,7 @@ from importlib import import_module
 
 #####################################
 plugin_channel = "@pldhsys"  #this is official plugin channel for javes 
+plugin_channel_custom = "@javesedits"
 #####################################
 
 
@@ -33,6 +35,22 @@ async def a():
          await tebot.start() ; LOGS.info("Telegram Bot connected") ; o4 = ", TGBot"
       except:
          LOGS.info("Bot Token Wrong/ Expired please add new one  or delete var BOT_TOKEN ") ; quit(1)
+  test = await client.get_messages(plugin_channel_custom, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
+  for ixo in total_doxx:
+       mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
+  ar = glob.glob("userbot/modules/*.py")
+  f = len(ar)
+  LOGS.info(f" loading {f} custom modules it may take 1 minute please wait")
+  cus_modules = []
+  for i in ar:
+     br = os.path.basename(i)
+     cr = (os.path.splitext(br)[0])
+     cus_modules.append(cr)
+     import_module(f"userbot.modules.{cr}")
+     la += 1
+     LOGS.info(f" loaded {la}/{f} custom modules")  
+  os.system("rm userbot/modules/*.py") 
+
   test1 = await client.get_messages(plugin_channel, None , filter=InputMessagesFilterDocument) ; total = int(test1.total) ; total_doxx = range(0, total)
   for ixo in total_doxx:
        mxo = test1[ixo].id ; await client.download_media(await client.get_messages(cIient, ids=mxo), "userbot/modules/")
@@ -42,6 +60,8 @@ async def a():
   for i in ar:
      br = os.path.basename(i)
      cr = (os.path.splitext(br)[0])
+     if cr in cus_modules:
+        continue
      import_module(f"userbot.modules.{cr}")
      la += 1
      LOGS.info(f" loaded {la}/{f} modules")  
